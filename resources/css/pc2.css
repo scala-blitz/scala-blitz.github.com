@@ -370,8 +370,16 @@ h1.newstitle {
   font-family: LiberationSans;
   font-size: 24px;
   padding-top: 10px;
-  border-bottom: 1px solid #3377cc;
+  padding-bottom: 0px;
+  margin-bottom: 3px;
   text-shadow: 1px 1px #e0e0e0;
+}
+
+hr.newstitle {
+  border: 0;
+  height: 1px;
+  color: #aaa;
+  background: #aaa;
 }
 
 h1.newstitle:active {
@@ -383,7 +391,7 @@ h1.newstitle:hover {
 }
 
 div.newsinfo {
-  color: #003a6a;
+  color: #9a9a9a;
 }
 
 div.toc span {

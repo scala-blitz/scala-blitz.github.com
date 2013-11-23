@@ -16,9 +16,10 @@ permalink: /news/index.html
       {{ post.title | upcase }}
     </h1>
   </a>
+  <hr class="newstitle"/>
   <div class="newsinfo">
-    {{ post.date | date: "%d.%m.%Y." }}, poster: {{ post.poster }}
-  </div>
+    <img width="15" height="15" src="/pc2/resources/images/calendar.png"/>&nbsp; {{ post.date | date: "%d.%m.%Y." }}
+  </div> 
   <br/>
   {{ post.content }}
   {% endfor %}
