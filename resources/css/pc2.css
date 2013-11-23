@@ -328,7 +328,7 @@ div.footer a:hover {
 }
 
 img.footer {
-  vertical-align: bottom;
+  vertical-align: top;
 }
 
 .footer {
@@ -339,18 +339,18 @@ img.footer {
 .bigheader {
   background-image: url('../images/header4.png');
   background-repeat: repeat-x;
-  height: 164px;
+  height: 220px;
 }
 
 .titlefooter {
   font-family: Titillium;
-  font-size: 28px;
+  font-size: 54px;
   color: #536c97;
 }
 
 .titlemain {
   font-family: Titillium;
-  font-size: 64px;
+  font-size: 96px;
   color: #e0eaef;
   text-shadow: 2px 2px #000044;
   -webkit-text-stroke: 0px #225599;
@@ -358,7 +358,7 @@ img.footer {
 
 .titleslogan {
   font-family: Titillium;
-  font-size: 24px;
+  font-size: 32px;
   color: #e0eaef;
   text-shadow: 1px 1px #000000;
 }
