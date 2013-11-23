@@ -1,0 +1,43 @@
+
+<div id="scroller" class="toc-panel">
+
+  <div class="toc"><span>Contents</span></div>
+
+  {% for pg in site.pages %}
+    {% if pg.partof == "documentation" and pg.outof %}
+      {% assign totalPagesTour = pg.outof %}
+    {% endif %}
+  {% endfor %}
+
+  <h3><a href="/pc2/">Parallel Collections 2.0</a></h3>
+
+  <ul class="bullets">
+    <li><a href="/pc2/home/news/">News</a></li>
+    <li><a href="/pc2/home/download/">Download</a></li>
+  </ul>
+
+  <h3><a href="/pc2/home/documentation/">Documentation</a></h3>
+  {% if totalPagesTour %}
+  <ul class="bullets">
+    {% for i in (1..totalPagesTour) %}
+      {% for pg in site.pages %}
+        {% if pg.partof == "documentation" and pg.num and pg.num == i %}
+          <li><a href="/pc2/{{ pg.url }}">{{ pg.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </ul>
+  {% else %}
+    **ERROR**. Couldn't find the total number of pages in this set of tutorial articles. Have you declared the `outof` tag in your YAML front matter?
+  {% endif %}
+
+  <h3>Other</h3>
+
+  <ul class="bullets">
+    <li><a href="/pc2/home/authors/">Authors</a></li>
+    <li><a href="/pc2/home/contact/">Contact</a></li>
+    <li><a href="/pc2/home/license/">License</a></li>
+  </ul>
+
+
+</div>

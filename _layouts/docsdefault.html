@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<div class="controls">
+  {% for pg in site.pages %}
+    {% if pg.partof == "documentation" and pg.outof %}
+      {% assign totalPagesTour = pg.outof %}
+    {% endif %}
+  {% endfor %}
+
+  {% if totalPagesTour %}
+    {% for i in (1..totalPagesTour) %}
+      {% for pg in site.pages %}
+        {% if pg.partof == "documentation" and pg.num and pg.num == i %}
+          {% capture isprev %}{{ pg.num | minus: page.num }}{% endcapture %}
+          {% capture isnext %}{{ page.num | minus: pg.num }}{% endcapture %}
+          {% if pg.num == page.num %}
+            <!--<a href="{{ page.url }}" id="center">{{ page.title }}</a>-->
+            <a id="center">&nbsp;</a>
+          {% elsif isprev contains '-1' %}
+            <a href="/pc2/{{ pg.url }}" id="left">&#8249; {{ pg.title }}</a>
+          {% elsif isnext contains '-1' %}
+            <a href="/pc2/{{ pg.url }}" id="right">{{ pg.title }} &#8250;</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+    **ERROR**. Couldn't find the total number of pages in this set of tutorial articles. Have you declared the `outof` tag in your YAML front matter?
+  {% endif %}
+</div>
+
+{{ content }}
+
+<div class="controls">
+  {% for pg in site.pages %}
+    {% if pg.partof == "documentation" and pg.outof %}
+      {% assign totalPagesTour = pg.outof %}
+    {% endif %}
+  {% endfor %}
+
+  {% if totalPagesTour %}
+    {% for i in (1..totalPagesTour) %}
+      {% for pg in site.pages %}
+        {% if pg.partof == "documentation" and pg.num and pg.num == i %}
+          {% capture isprev %}{{ pg.num | minus: page.num }}{% endcapture %}
+          {% capture isnext %}{{ page.num | minus: pg.num }}{% endcapture %}
+          {% if pg.num == page.num %}
+            <!--<a href="{{ page.url }}" id="center">{{ page.title }}</a>-->
+            <a id="center">&nbsp;</a>
+          {% elsif isprev contains '-1' %}
+            <a href="/pc2/{{ pg.url }}" id="left">&#8249; {{ pg.title }}</a>
+          {% elsif isnext contains '-1' %}
+            <a href="/pc2/{{ pg.url }}" id="right">{{ pg.title }} &#8250;</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+    **ERROR**. Couldn't find the total number of pages in this set of tutorial articles. Have you declared the `outof` tag in your YAML front matter?
+  {% endif %}
+</div>
