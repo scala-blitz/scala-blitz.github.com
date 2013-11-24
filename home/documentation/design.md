@@ -129,22 +129,22 @@ Rather, they exist only to power users to extend this framework with additional 
 The `Stealer` trait looks roughly as follows:
 
     trait Stealer[T] extends Iterator[T] {
-      def advance(step: Int): Int
+      def nextBatch(step: Int): Int
       def markStolen(): Boolean
       def split: (Stealer[T], Stealer[T])
     }
 
 At any point, a stealer is owned by a single processor.
-Before calling `next` and `hasNext`, the processor calls the `advance` method,
+Before calling `next` and `hasNext`, the processor calls the `nextBatch` method,
 specifying the approximate size of the batch of elements he would like to traverse using `next` and `hasNext`.
 It can only then call `next` and `hasNext`.
 Between processing these batches, the processor checks if there have been any attempts
 to steal it using the `markStolen` method.
 Processors looking for work will call the `markStolen` method to notify that this stealer
-should no longer be advanced.
-Both `advance` and `markStolen` should atomically update the state of the stealer.
+should no longer produce new batches.
+Both `nextBatch` and `markStolen` should atomically update the state of the stealer.
 After the stealer becomes stolen
-its state becomes stale, and in can no longer be `advance`d,
+its state becomes stale, and in can no longer be `nextBatch`d,
 but its `split` method can be called to divide the remaining elements
 into two substealers.
 This method is *idempotent* and may be called multiple times,
@@ -189,7 +189,7 @@ Its interface closely resembles the following:
     }
 
 In essence, kernels define how to use a stealer by calling its
-`hasNext` and `next` methods between `advance` calls in order
+`hasNext` and `next` methods between `nextBatch` calls in order
 to compute a partial result for that batch.
 An kernel for:
 
