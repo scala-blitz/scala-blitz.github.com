@@ -1,6 +1,6 @@
 ---
 layout: mainpage
-title: Parallel Collections 2.0
+title: ScalaBlitz
 ---
 
 

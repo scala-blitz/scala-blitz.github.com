@@ -20,27 +20,23 @@ layout: base
 <div class="darkdivider"></div>
 <div class="topshadow"></div>
 
+&nbsp;
+
 <div id="content">
   <div id="main" class="container_16">
 
     <div class="grid_16">
 
       <div class="grid_8 alpha">
-        {% capture main_test %}
-          {% include main-test-example.md %}
+        {% capture main_example_1 %}
+          {% include main-example-1.md %}
         {% endcapture %}
-        {{ main_test | markdownify }}
+        {{ main_example_1 | markdownify }}
       </div>
       <div class="grid_6 push_1">
+        {% capture main_headline_1 %}{% include main-headline-1.md %}{% endcapture %}
+        {{ main_headline_1 | markdownify }}
         <br/>
-        <br/>
-        Blitz description TODO
-        <br/>
-        TODO features
-        <ul class="bullets">
-          <li>feature 1</li>
-          <li>feature 2</li>
-        </ul>
       </div>
       <div class="grid_3 omega">
       </div>
@@ -52,22 +48,17 @@ layout: base
     <div class="grid_16">
 
       <div class="grid_7 alpha">
-        <br/>
-        Blitz more descriptions
-        TODO features
-        <ul class="bullets">
-          <li>feature 1</li>
-          <li>feature 2</li>
-        </ul>
+        {% capture main_headline_2 %}{% include main-headline-2.md %}{% endcapture %}
+        {{ main_headline_2 | markdownify }}
       </div>
       <div class="grid_1">
         <br/>
       </div>
       <div class="grid_8 omega">
-        {% capture main_run %}
-          {% include main-run-example.md %}
+        {% capture main_example_2 %}
+          {% include main-example-2.md %}
         {% endcapture %}
-        {{ main_run | markdownify }}
+        {{ main_example_2 | markdownify }}
       </div>
 
     </div>
@@ -78,14 +69,16 @@ layout: base
 
     <div class="grid_8">
       <ul class="bullets">
-        <li>feature 1</li>
-        <li>feature 2</li>
+        <li>highly optimized collection operations based on Scala Macros</li>
+        <li>variety of supported collection types and Scala standard library collections interoperability</li>
+        <li>flexible API easily extendable to custom collections</li>
       </ul>
     </div>
     <div class="grid_8">
       <ul class="bullets">
-        <li>feature 3</li>
-        <li>feature 4</li>
+        <li>seamless data-parallel operations integration</li>
+        <li>data-parallel scheduling suitable both for fine-grained uniform and irregular workloads</li>
+        <li>custom configurable data-parallel schedulers</li>
       </ul>
     </div>
 

@@ -328,7 +328,7 @@ div.footer a:hover {
 }
 
 img.footer {
-  vertical-align: top;
+  vertical-align: bottom;
 }
 
 .footer {
@@ -344,23 +344,25 @@ img.footer {
 
 .titlefooter {
   font-family: Titillium;
-  font-size: 54px;
-  color: #536c97;
+  font-size: 52px;
+  color: #78a;
 }
 
 .titlemain {
   font-family: Titillium;
   font-size: 96px;
-  color: #e0eaef;
+  color: #a5b0c0;
   text-shadow: 2px 2px #000044;
   -webkit-text-stroke: 0px #225599;
 }
 
 .titleslogan {
   font-family: Titillium;
-  font-size: 32px;
-  color: #e0eaef;
+  font-size: 34px;
+  color: #a5b0c0;
   text-shadow: 1px 1px #000000;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+  -webkit-font-smoothing: antialiased;
 }
 
 div.newsentries {
@@ -431,8 +433,6 @@ div.controls #center {
   margin-left: 10px;
   width: 100px;
 }
-
-
 
 
 

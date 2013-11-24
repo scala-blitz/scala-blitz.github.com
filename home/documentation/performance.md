@@ -17,9 +17,9 @@ comparing them to other data-parallel frameworks,
 standard Scala collections
 and hand-written, optimal sequential programs.
 
-An extensive suite of benchmarks and microbenchmarks is included in
-We have used the [ScalaMeter](http://axel22.github.com/scalameter/) performance measurement framework to implement it.
-These benchmarking suite is run regularly during development.
+An extensive suite of benchmarks and microbenchmarks is included in the [source code](https://github.com/scala-blitz/scala-blitz/tree/master/src/test/scala/org/scala/optimized/test/scalameter).
+The [ScalaMeter](http://axel22.github.com/scalameter/) performance measurement framework was used to implement it,
+and this benchmarking suite is run regularly during development.
 You can see and compare the results for a range of different architectures:
 
 - [Intel 2.66 GHz Quad Core Xeon X5355 with hyperthreading](http://chara.epfl.ch/~prokopec/npc-chara/report/)
