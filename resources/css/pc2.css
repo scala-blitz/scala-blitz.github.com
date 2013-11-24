@@ -392,6 +392,10 @@ h1.newstitle:hover {
   color: #00aaf6;
 }
 
+img.center {
+  vertical-align: middle;
+}
+
 div.newsinfo {
   color: #9a9a9a;
 }

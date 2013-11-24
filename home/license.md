@@ -12,7 +12,7 @@ project, redistribute it or modify it, as long as you reproduce the license text
 See the full license below.
 
 
-# <img height="40px" src="{{ homedir }}/resources/images/logo-pc-2.png"/> ScalaBlitz LICENSE
+<h1><img class="center" height="58px" src="{{ homedir }}/resources/images/chess-knight-logo-small.png"/> ScalaBlitz LICENSE</h1>
 
 Copyright &copy; 2012, LAMP EPFL
 
