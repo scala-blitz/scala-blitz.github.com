@@ -118,7 +118,7 @@ We will be using the workstealing tree scheduler for this example:
 Notice that the `Scheduler` must be `implicit`ly available.
 Second, we need to convert our range into its parallel correspondant,
 by calling `toPar` on it.
-The entire example now becomes (TODO - after renaming, change `Scheduler` to `WorkstealingTreeScheduler`):
+The entire example now becomes:
 
     val config = new workstealing.Scheduler.Config.Default(p)
     implicit val s = new workstealing.Scheduler.ForkJoin(config)
@@ -138,7 +138,7 @@ The entire example now becomes (TODO - after renaming, change `Scheduler` to `Wo
       pixels(idx) = color
     }
 
-You can see the complete code of [this example here](TODO).
+You can see the complete code of [this example here](https://github.com/scala-blitz/scala-blitz/blob/master/src/test/scala/org/scala/optimized/test/examples/Mandelbrot.scala).
 
 Rendering the Mandelbrot set is a particularly good example of how much
 better the workstealing tree scheduler is at irregular workloads.

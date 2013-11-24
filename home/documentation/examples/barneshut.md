@@ -428,7 +428,7 @@ Again, this is just a parallel `filter` operation:
 
     bodies = newBodies.filter(isOutlier(_, quad))
 
-You can see the complete code for the [parallel Barnes-Hut simulation here](TODO).
+You can see the complete code for the [parallel Barnes-Hut simulation here](https://github.com/scala-blitz/scala-blitz/blob/master/src/test/scala/org/scala/optimized/test/examples/BarnesHut.scala).
 If your browser supports Java, you can also run the applet below directly to see the simulation right away.
 
 TODO applet
