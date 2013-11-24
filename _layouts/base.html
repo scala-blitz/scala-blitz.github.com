@@ -1,3 +1,6 @@
+---
+layout: basichead
+---
 {% capture homedir %}{% include homedir.md %}{% endcapture %}
 <!DOCTYPE html>
 <html>
@@ -36,55 +39,7 @@
 
   </div>
 
-  <div id="footer">
-    <div class="darkdivider"></div>
-    <div class="lightdivider"></div>
-  
-    <div id="footercontent" class="container_16">
-      <div class="grid_3 footer">
-        <div class"grid_3 alpha footer"><h2 class="footer">ScalaBlitz</h3></div>
-        <div class"grid_3 darkdivider hidivider"><hr class="footer"/></div>
-        <div class"grid_3 footer"><a href="{{ homedir }}/home/documentation">Documentation</a></div>
-        <div class"grid_3 footer"><a href="http://lampwww.epfl.ch/~prokopec{{ homedir }}/index.html#package">API Reference</a></div>
-        <div class"grid_3 omega footer"><a href="{{ homedir }}/home/download">Download</a></div>
-      </div>
-      <div class="grid_3 footer">
-        <div class"grid_3 alpha footer"><h2 class="footer">Contribute</h3></div>
-        <div class"grid_3 darkdivider hidivider"><hr class="footer"/></div>
-        <div class"grid_3 footer"><a href="https://github.com/scala-blitz/scala-blitz">Source Code</a></div>
-        <div class"grid_3 footer"><a href="https://groups.google.com/forum/#!forum/scala-blitz">Mailing List</a></div>
-        <div class"grid_3 omega footer"><a href="{{ homedir }}/home/reportbug">Report a Bug</a></div>
-      </div>
-      <div class="grid_3 footer">
-        <div class"grid_3 alpha footer"><h2 class="footer">Information</h3></div>
-        <div class"grid_3 darkdivider hidivider"><hr class="footer"/></div>
-        <div class"grid_3 footer"><a href="{{ homedir }}/home/license">License</a></div>
-        <div class"grid_3 omega footer"><a href="{{ homedir }}/home/contact">Contact</a></div>
-        <div class"grid_3 footer"><a href="{{ homedir }}/home/authors">Authors</a></div>
-      </div>
-
-      <div class="grid_1">
-        <br/>
-      </div>
-
-      <div class="grid_2 footer titlefooter">
-        <img width="105" height="84" src="{{ homedir }}/resources/images/chess-knight-logo-small.png" alt="logo" class="footer"></img>
-      </div>
-
-      <div class="container_4">
-        <div class="grid_4 footer titlefooter">
-          ScalaBlitz
-        </div>
-        <div class="grid_4 footer titlefooter">
-        </div>
-      </div>
-      
-      <div class="grid_16 lightdivider hidivider"></div>
-
-      <div class="grid_8 footer">&copy; 2013 ScalaBlitz</div>
-      <div class="grid_8 footer">ScalaBlitz is Open Source Software and is available under the New BSD License.</div>
-    </div>
-  </div>
+  {% include footer.htm %}
 
 </body>
 </html>
