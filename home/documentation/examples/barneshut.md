@@ -7,7 +7,7 @@ num: 20
 outof: 50
 partof: examples
 description: This example explains how to efficiently simulate bodies (a swarm of interacting particles or a cluster of stars) using parallel collections. Bodies interact with gravitational or some other force and constantly modify their relative speeds and positions. Depending on their mutual distance, bodies exert different amount of force on each other -- a spatial data-structure is needed to update the bodies in parallel efficiently.
-image: /pc2/resources/images/barneshut-icon.png
+image: {{ homedir }}/resources/images/barneshut-icon.png
 ---
 
 
@@ -22,7 +22,7 @@ In this larger example of a data-parallel application we will examine the gravit
 Our simulation might end up looking something like this:
 
 <div class="imageframe-deep">
-  <img src="/pc2/resources/images/barnes.gif"/>
+  <img src="{{ homedir }}/resources/images/barnes.gif"/>
 </div>
 
 But, how does the afore-mentioned quadtree men help us avoid traversing all the other stars when calculating the net force on a particular star?
@@ -34,7 +34,7 @@ The leaves of the quadtree represent specific elements.
 Here is an example of a quadtree for elements `A`, `B`, `C` and `D` positioned in a 2D plane:
 
 <div>
-  <img src="/pc2/resources/images/quadtree.png"/>
+  <img src="{{ homedir }}/resources/images/quadtree.png"/>
 </div>
 
 Each internal node divides the rectangle into 4 smaller quadrants, until the quadrant only contains a single element.

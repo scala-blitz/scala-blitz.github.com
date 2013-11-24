@@ -1,4 +1,5 @@
 
+{% capture homedir %}{% include homedir.md %}{% endcapture %}
 <div id="scroller" class="toc-panel">
 
   <div class="toc"><span>Contents</span></div>
@@ -9,20 +10,20 @@
     {% endif %}
   {% endfor %}
 
-  <h3><a href="/pc2/">Parallel Collections 2.0</a></h3>
+  <h3><a href="{{ homedir }}/">ScalaBlitz</a></h3>
 
   <ul class="bullets">
-    <li><a href="/pc2/home/news/">News</a></li>
-    <li><a href="/pc2/home/download/">Download</a></li>
+    <li><a href="{{ homedir }}/home/news/">News</a></li>
+    <li><a href="{{ homedir }}/home/download/">Download</a></li>
   </ul>
 
-  <h3><a href="/pc2/home/documentation/">Documentation</a></h3>
+  <h3><a href="{{ homedir }}/home/documentation/">Documentation</a></h3>
   {% if totalPagesTour %}
   <ul class="bullets">
     {% for i in (1..totalPagesTour) %}
       {% for pg in site.pages %}
         {% if pg.partof == "documentation" and pg.num and pg.num == i %}
-          <li><a href="/pc2/{{ pg.url }}">{{ pg.title }}</a></li>
+          <li><a href="{{ homedir }}/home/documentation/{{ pg.permalink }}">{{ pg.title }}</a></li>
         {% endif %}
       {% endfor %}
     {% endfor %}
@@ -34,9 +35,9 @@
   <h3>Other</h3>
 
   <ul class="bullets">
-    <li><a href="/pc2/home/authors/">Authors</a></li>
-    <li><a href="/pc2/home/contact/">Contact</a></li>
-    <li><a href="/pc2/home/license/">License</a></li>
+    <li><a href="{{ homedir }}/home/authors/">Authors</a></li>
+    <li><a href="{{ homedir }}/home/contact/">Contact</a></li>
+    <li><a href="{{ homedir }}/home/license/">License</a></li>
   </ul>
 
 

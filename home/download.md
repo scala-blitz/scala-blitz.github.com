@@ -8,12 +8,12 @@ permalink: /download/index.html
 
 ## Direct download
 
-The latest Parallel Collections 2.0 release is **Parallel Collections 2.0.0-M1** for Scala 2.10.2.
+The latest ScalaBlitz release is **ScalaBlitz.0-M1** for Scala 2.10.2.
 
 
 ## Maven repository
 
-Parallel Collections 2.0 are available for download from [Sonatype](https://oss.sonatype.org/index.html)!
+ScalaBlitz are available for download from [Sonatype](https://oss.sonatype.org/index.html)!
 
     <dependency>
       <groupId>todo</groupId>
@@ -31,7 +31,7 @@ If you're using [SBT](/home/gettingstarted/sbt/), just add the following lines t
 
 ## Source code
 
-Parallel Collections 2.0 source code is available at [GitHub](https://github.com/TODO/).
+ScalaBlitz source code is available at [GitHub](https://github.com/TODO/).
 
 
 

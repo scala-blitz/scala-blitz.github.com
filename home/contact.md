@@ -10,7 +10,7 @@ permalink: /contact/index.html
 ### Questions?
 
 If it's a general discussion topic, please post a message on the 
-[Parallel Collections 2.0 mailing list](http://groups.google.com/group/parallel-collections-2).
+[ScalaBlitz mailing list](http://groups.google.com/group/parallel-collections-2).
 
 Otherwise, feel free to contact us directly:
 

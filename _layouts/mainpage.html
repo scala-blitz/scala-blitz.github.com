@@ -2,6 +2,7 @@
 layout: base
 ---
 
+{% capture homedir %}{% include homedir.md %}{% endcapture %}
 <div class="bigheader">
   <div class="container_16">
 
@@ -82,7 +83,7 @@ layout: base
       </ul>
     </div>
 
-    <div class="grid_16">See the <a href="/pc2/home/documentation">Documentation</a> section for instructions and more examples.</div>
+    <div class="grid_16">See the <a href="{{ homedir }}/home/documentation">Documentation</a> section for instructions and more examples.</div>
 
   </div>
 </div>

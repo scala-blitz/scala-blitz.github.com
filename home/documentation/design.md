@@ -113,7 +113,7 @@ Parallel collections implemented in this framework can be easily converted to re
 
 The rest of this section goes deeper into the architectural details of the framework.
 Unless you're seeking knowledge to extend the framework with new collections or operations,
-you may skip it and go directly to the [Parallel Collections classes section](/pc2/home/documentation/classes).
+you may skip it and go directly to the [Parallel Collections classes section]({{ homedir }}/home/documentation/classes).
 
 
 ## Stealers

@@ -7,7 +7,7 @@ num: 10
 outof: 50
 partof: examples
 description: This example shows how to render a Mandelbrot set in parallel and how to use the schedulers to achieve proper load-balancing.
-image: /pc2/resources/images/mandel-icon.png
+image: {{ homedir }}/resources/images/mandel-icon.png
 ---
 
 
@@ -31,7 +31,7 @@ obtain the following image:
 
 
 <div class="imageframe-deep">
-  <img src="/pc2/resources/images/mandel-bw.jpg"/>
+  <img src="{{ homedir }}/resources/images/mandel-bw.jpg"/>
 </div>
 
 This, however, is not very interesting -- Mandelbrot set visualizations typically
@@ -39,9 +39,9 @@ color pixels depending on their convergence rate, i.e. how many iterations were
 necessary to decide if the corresponding complex number converges or not.
 
 <div class="imageframe-deep">
-<img src="/pc2/resources/images/mandel-color-2.png"/>
-<img src="/pc2/resources/images/mandel-color-1.png"/>
-<img src="/pc2/resources/images/mandel-color-3.jpg"/>
+<img src="{{ homedir }}/resources/images/mandel-color-2.png"/>
+<img src="{{ homedir }}/resources/images/mandel-color-1.png"/>
+<img src="{{ homedir }}/resources/images/mandel-color-3.jpg"/>
 </div>
 
 Notice that rendering a Mandelbrot set image is trivially data-parallel -- we can compute each

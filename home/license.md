@@ -5,14 +5,14 @@ permalink: /license/index.html
 ---
 
 
-Parallel Collections 2.0 is Open Source Software and is available under the New BSD License.
+ScalaBlitz is Open Source Software and is available under the New BSD License.
 Roughly, this means that you can use it freely in any commercial or non-commercial
 project, redistribute it or modify it, as long as you reproduce the license text.
 
 See the full license below.
 
 
-# <img height="40px" src="/pc2/resources/images/logo-pc-2.png"/> Parallel Collections 2.0 LICENSE
+# <img height="40px" src="{{ homedir }}/resources/images/logo-pc-2.png"/> ScalaBlitz LICENSE
 
 Copyright &copy; 2012, LAMP EPFL
 

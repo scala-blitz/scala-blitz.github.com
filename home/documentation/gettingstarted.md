@@ -27,7 +27,7 @@ have to be eliminated.
 Second, pure task-based preemptive scheduling used in Scala Parallel Collections
 does not handle certain kinds of irregular data-parallel operations well.
 The data-parallel operations in this framework are provided for a wide range of
-operations, and they greatly reduce both of these overheads.
+collections, and they greatly reduce both of these overheads.
 
 
 ## Invoking parallel operations
