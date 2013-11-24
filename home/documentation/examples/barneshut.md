@@ -7,7 +7,7 @@ num: 20
 outof: 50
 partof: examples
 description: This example explains how to efficiently simulate bodies (a swarm of interacting particles or a cluster of stars) using parallel collections. Bodies interact with gravitational or some other force and constantly modify their relative speeds and positions. Depending on their mutual distance, bodies exert different amount of force on each other -- a spatial data-structure is needed to update the bodies in parallel efficiently.
-image: {{ homedir }}/resources/images/barneshut-icon.png
+image: barneshut-icon.png
 ---
 
 

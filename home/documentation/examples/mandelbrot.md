@@ -7,7 +7,7 @@ num: 10
 outof: 50
 partof: examples
 description: This example shows how to render a Mandelbrot set in parallel and how to use the schedulers to achieve proper load-balancing.
-image: {{ homedir }}/resources/images/mandel-icon.png
+image: mandel-icon.png
 ---
 
 

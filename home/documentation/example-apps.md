@@ -34,9 +34,9 @@ Some of the applications even contain applets runnable directly from the website
     {% for pg in site.pages %}
       {% if pg.partof == "examples" and pg.num and pg.num == i %}
       <div class="examples">
-        <a class="examples" href="{{ homedir }}/{{ pg.url }}"><table>
+        <a class="examples" href="{{ homedir }}/home/documentation/examples/{{ pg.permalink }}"><table>
           <tr>
-            <td><img class="imageframe-icon" src="{{ pg.image }}" width="48" height="48"/></td>
+            <td><img class="imageframe-icon" src="{{ homedir }}/resources/images/{{ pg.image }}" width="48" height="48"/></td>
             <td><h2>
               {{ pg.title }}
             </h2></td>
