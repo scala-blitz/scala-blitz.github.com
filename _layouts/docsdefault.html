@@ -20,9 +20,9 @@ layout: default
             <!--<a href="{{ page.url }}" id="center">{{ page.title }}</a>-->
             <a id="center">&nbsp;</a>
           {% elsif isprev contains '-1' %}
-            <a href="{{ homedir }}/{{ pg.url }}" id="left">&#8249; {{ pg.title }}</a>
+            <a href="{{ homedir }}/home/documentation/{{ pg.permalink }}" id="left">&#8249; {{ pg.title }}</a>
           {% elsif isnext contains '-1' %}
-            <a href="{{ homedir }}/{{ pg.url }}" id="right">{{ pg.title }} &#8250;</a>
+            <a href="{{ homedir }}/home/documentation/{{ pg.permalink }}" id="right">{{ pg.title }} &#8250;</a>
           {% endif %}
         {% endif %}
       {% endfor %}
@@ -32,8 +32,11 @@ layout: default
   {% endif %}
 </div>
 
+
 {{ content }}
 
+
+{% capture homedir %}{% include homedir.md %}{% endcapture %}
 <div class="controls">
   {% for pg in site.pages %}
     {% if pg.partof == "documentation" and pg.outof %}
@@ -51,9 +54,9 @@ layout: default
             <!--<a href="{{ page.url }}" id="center">{{ page.title }}</a>-->
             <a id="center">&nbsp;</a>
           {% elsif isprev contains '-1' %}
-            <a href="{{ homedir }}/{{ pg.url }}" id="left">&#8249; {{ pg.title }}</a>
+            <a href="{{ homedir }}/home/documentation/{{ pg.permalink }}" id="left">&#8249; {{ pg.title }}</a>
           {% elsif isnext contains '-1' %}
-            <a href="{{ homedir }}/{{ pg.url }}" id="right">{{ pg.title }} &#8250;</a>
+            <a href="{{ homedir }}/home/documentation/{{ pg.permalink }}" id="right">{{ pg.title }} &#8250;</a>
           {% endif %}
         {% endif %}
       {% endfor %}
