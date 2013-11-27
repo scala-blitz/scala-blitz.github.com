@@ -18,7 +18,7 @@ Using optimize rewrites data-parallel operations from scala collections to opera
 
 
 ## Quick example
-Imagine you have some code, written previously that solver [Problem 1 from project Euler](https://projecteuler.net/problem=1).
+Imagine you have some code, written previously that solves [Problem 1 from project Euler](https://projecteuler.net/problem=1).
     
 	def ProjectEuler1(x: Range) = {
       x.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
@@ -26,7 +26,7 @@ Imagine you have some code, written previously that solver [Problem 1 from proje
 	
 And you want it to run faster :-). 
 You can potentially rewrite this code using our high-performance operations, but it'll take time.
-Thus we provide you an optimize block that does this automaticaly during compilation.
+Thus we provide you an 'optimize' block that does this automaticaly during compilation.
 All you need to do is cover your code in optimize{}:
 
 
@@ -37,13 +37,14 @@ All you need to do is cover your code in optimize{}:
 
 optimize will rewrite function body to something similar to this:
 
-    def ProjectEuler1(x: Range) = optimize {
+    def ProjectEuler1(x: Range) = {
         import scala.collection.par._;
 		implicit val scheduler = Scheduler.Implicits.sequential;
-		.x.toPar.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
+		x.toPar.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
     }
 
-And you can clearly see speedup [on benchmarks](TODO).
-
+And you can clearly see 3 times speedup [on benchmarks](TODO).
+You don't get a better speedup becouse the bottleneck here is array allocation inside filter.
+This allocation can be removed entirely by advanced analisys. We're currently working on optimization that will rewrite same code to single operation that applies filtering and reduction as one step.
 
 
