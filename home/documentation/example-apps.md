@@ -4,8 +4,8 @@ title: Example applications
 permalink: /example-apps.html
 
 partof: documentation
-num: 7
-outof: 8
+num: 8
+outof: 9
 ---
 
 

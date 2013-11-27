@@ -4,8 +4,8 @@ title: Extending the framework
 permalink: /extending.html
 
 partof: documentation
-num: 6
-outof: 8
+num: 7
+outof: 9
 ---
 
 

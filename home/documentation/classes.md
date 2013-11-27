@@ -4,8 +4,8 @@ title: Parallel collection classes
 permalink: /classes.html
 
 partof: documentation
-num: 4
-outof: 8
+num: 5
+outof: 9
 ---
 
 

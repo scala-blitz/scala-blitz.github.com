@@ -5,7 +5,7 @@ permalink: /gettingstarted.html
 
 partof: documentation
 num: 2
-outof: 8
+outof: 9
 ---
 
 
