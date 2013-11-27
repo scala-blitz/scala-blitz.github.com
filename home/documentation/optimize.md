@@ -14,14 +14,14 @@ This section shows optimize block,
 that is supposed to be used to speedup data-parallel operations 
 on normal scala collections.
 
-Using optimize rewrites data-parallel operations from scala collections to operations from workstealing collections, providing you all advantages: eliminated boxing, better inlining, data-structure specialization. This commonly gives 10-20x speedup for operations having small amount of work per-element.
+Using optimize rewrites data-parallel operations from scala collections to operations from workstealing collections, providing you all advantages: eliminated boxing, better inlining, data-structure specialization. This commonly gives 2-3x speedup for operations having small amount of work per-element, but for some tests speedup can be as big as 50x.
 
 
 ## Quick example
 Imagine you have some code, written previously that solver [Problem 1 from project Euler](https://projecteuler.net/problem=1).
     
-	def problem1 = {
-      (1 to 1000).filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
+	def ProjectEuler1(x: Range) = {
+      x.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
     }
 	
 And you want it to run faster :-). 
@@ -31,16 +31,16 @@ All you need to do is cover your code in optimize{}:
 
 
     import scala.collection.optimizer._
-	def problem1 = optimize {
-      (1 to 1000).filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
+	def ProjectEuler1(x: Range) = optimize {
+      x.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
     }
 
-optimize will rewrite function body to this:
+optimize will rewrite function body to something similar to this:
 
-    def setDisjoint(s1:HashSet[Int], s2:HashSet[Int]) = {
-     import scala.collection.par._;
-     import Scheduler.Implicits.sequential;
-     !s1.toPar.exists(elem: Int => s2.contains(elem)) &&!s2.toPar.exists(elem: Int => s1.contains(elem))
+    def ProjectEuler1(x: Range) = optimize {
+        import scala.collection.par._;
+		implicit val scheduler = Scheduler.Implicits.sequential;
+		.x.toPar.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
     }
 
 And you can clearly see speedup [on benchmarks](TODO).
