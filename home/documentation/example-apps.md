@@ -4,8 +4,8 @@ title: Example applications
 permalink: /example-apps.html
 
 partof: documentation
-num: 7
-outof: 8
+num: 8
+outof: 9
 ---
 
 
@@ -13,7 +13,7 @@ This section contains walkthroughs for several benchmark applications.
 These walkthroughs are meant to show you the capabilities of the collection API,
 in the same time instructing you how to use (parallel) collections to create larger applications.
 All the examples in this section are executable and can be run or tweaked by downloading
-the [source code](TODO) repository.
+the [source code](https://github.com/scala-blitz/scala-blitz/) repository.
 Some of the applications even contain applets runnable directly from the website.
 
 <br/>

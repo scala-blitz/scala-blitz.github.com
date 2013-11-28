@@ -31,7 +31,7 @@ If you're using [SBT](/home/gettingstarted/sbt/), just add the following lines t
 
 ## Source code
 
-ScalaBlitz source code is available at [GitHub](https://github.com/TODO/).
+ScalaBlitz source code is available at [GitHub](https://github.com/scala-blitz/scala-blitz/).
 
 
 
