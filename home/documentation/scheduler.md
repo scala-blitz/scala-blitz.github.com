@@ -10,11 +10,11 @@ outof: 9
 
 
 
-This section shows how to use schedulers -- import existing ones,
+This section shows how to use schedulers -- how to import existing ones,
 configure and instantiate an existing one,
-even extend an existing one or implement your own scheduler.
+extend an existing one or implement your own scheduler.
+We start by describing the two commonly used default schedulers.
 
-2 most commonly used schedulers are already provided:
 ## Default parallel scheduler
 
 This scheduler uses per-application threadpool to execute computations.
@@ -28,12 +28,13 @@ or reducables and zippables.
 
 ## Default sequential scheduler
 
-We also have a scheduler that uses only invoker thread to perform computation.
-The simplest way to use this scheduler is to add an import:
+We also have a scheduler that uses only a single, caller thread to perform computations.
+The simplest way to use this scheduler is to add the following import:
 
     import scala.collection.par.Scheduler.Implicits.sequential
 
-Due to low-overheads in our operations implementations it can be up to 50 times faster to use our operation implementations instead of scala standard library operations. This can be automatized by using [optimize block]({{ homedir }}/home/documentation/optimize.html).
+Due to optimizations applied to bulk operations on collections it can be up to 50x faster to use a ScalaBlitz operation
+ instead of Scala standard library operations. Using the [optimize block]({{ homedir }}/home/documentation/optimize.html) currently optimizes the operation and then uses this scheduler to execute it.
 
 ## Instantiating an existing scheduler
 
