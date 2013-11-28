@@ -1,6 +1,6 @@
 ---
 layout: docsdefault
-title: Optimize block
+title: Sequential optimizations
 permalink: /optimize.html
 
 partof: documentation
@@ -10,41 +10,52 @@ outof: 9
 
 
 
-This section shows optimize block,
-that is supposed to be used to speedup data-parallel operations 
-on normal scala collections.
+This section describes the `optimize` block,
+used to speed up bulk operations on sequential Scala collections.
 
-Using optimize rewrites data-parallel operations from scala collections to operations from workstealing collections, providing you all advantages: eliminated boxing, better inlining, data-structure specialization. This commonly gives 2-3x speedup for operations having small amount of work per-element, but for some tests speedup can be as big as 50x.
+The `optimize` rewrites Scala collection operations to operations from workstealing collections,
+providing the following advantages:
+- it eliminates boxing
+- it performs better inlining
+- it specializes the operation to a particular data-structure
+
+These transformations commonly give a 2-3x speedup for operations having a small amount of work per-element,
+but in some cases involving boxing, the speedup can be as big as 50x.
 
 
 ## Quick example
-Imagine you have some code, written previously that solves [Problem 1 from project Euler](https://projecteuler.net/problem=1).
+
+Assume we have the following code that solves the [Problem 1 from Project Euler](https://projecteuler.net/problem=1).
     
-	def ProjectEuler1(x: Range) = {
-      x.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
+    def ProjectEuler1(x: Range) = {
+      x.filter(x => (x % 3 == 0) || (x % 5 == 0)).reduce(_ + _)
     }
 	
-And you want it to run faster :-). 
-You can potentially rewrite this code using our high-performance operations, but it'll take time.
-Thus we provide you an 'optimize' block that does this automaticaly during compilation.
-All you need to do is cover your code in optimize{}:
+And you want it to run faster :-).
 
+You could potentially rewrite this code manually to `while` loops and low-level constructs to speed it up,
+but this takes time and results in hard-to-read code.
+For this reason, ScalaBlitz provides an `optimize` block that does this automaticaly during compilation.
+All you need to do is enclose your code in an `optimize { }` statement:
 
     import scala.collection.optimizer._
-	def ProjectEuler1(x: Range) = optimize {
-      x.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
+    def ProjectEuler1(x: Range) = optimize {
+      x.filter(x => (x % 3 == 0) || (x % 5 == 0)).reduce(_ + _)
     }
 
-optimize will rewrite function body to something similar to this:
+and the function body will be rewritten to something similar to this:
 
     def ProjectEuler1(x: Range) = {
-        import scala.collection.par._;
-		implicit val scheduler = Scheduler.Implicits.sequential;
-		x.toPar.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
+      import scala.collection.par._
+      implicit val scheduler = Scheduler.Implicits.sequential
+      x.toPar.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
     }
 
-And you can clearly see 3 times speedup [on benchmarks](TODO).
-You don't get a better speedup becouse the bottleneck here is array allocation inside filter.
-This allocation can be removed entirely by advanced analisys. We're currently working on optimization that will rewrite same code to single operation that applies filtering and reduction as one step.
+If you measure the running time you will see a 3x speedup [on benchmarks](TODO).
+
+Currently, the speedup is limited to only 3x due to array allocation inside the `filter`.
+This allocation can be removed entirely by advanced analysis.
+We are currently working on optimization that will rewrite same code to a single operation
+that fuses filtering and reduction into a single step.
 
 
