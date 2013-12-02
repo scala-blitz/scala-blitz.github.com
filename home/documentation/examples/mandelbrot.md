@@ -148,5 +148,4 @@ If you would like to see the Mandelbrot computation in action,
 just play with the applet below, which allows switching between the
 classic parallel collections and the new scheduler.
 
-TODO add applet
 
