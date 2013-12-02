@@ -8,25 +8,28 @@ permalink: /download/index.html
 
 ## Direct download
 
-The latest ScalaBlitz release is **ScalaBlitz.0-M1** for Scala 2.10.2.
+The latest ScalaBlitz release is **ScalaBlitz 1.0-M1** for Scala 2.11.0-M7.
 
 
 ## Maven repository
 
 ScalaBlitz are available for download from [Sonatype](https://oss.sonatype.org/index.html)!
 
+You can add it as an SBT dependency at Sonatype OSS.
+
     <dependency>
-      <groupId>todo</groupId>
-      <artifactId>todo</artifactId>
-      <version>todo</version>
+      <groupId>com.github.scala-blitz</groupId>
+      <artifactId>scala-blitz_2.11.0-M7</artifactId>
+      <version>1.0-M1</version>
     </dependency>
 
-If you're using [SBT](/home/gettingstarted/sbt/), just add the following lines to `build.sbt`:
+Or, in SBT:
 
     resolvers += "Sonatype OSS Snapshots" at
       "https://oss.sonatype.org/content/repositories/snapshots"
 
-    libraryDependencies += todo
+    libraryDependencies ++= "com.github.scala-blitz" %% "scala-blitz" % "1.0-M1"
+
 
 
 ## Source code
