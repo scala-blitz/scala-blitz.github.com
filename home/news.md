@@ -9,7 +9,7 @@ permalink: /news/index.html
 
 <div class="newsentries">
   {% for post in site.posts %}
-  <a href="/{{ post.url }}">
+  <a href="http:/scala-blitz.github.com/{{ post.url }}">
     <br/>
     <br/>
     <h1 class="newstitle">
