@@ -28,7 +28,7 @@ Or, in SBT:
     resolvers += "Sonatype OSS Snapshots" at
       "https://oss.sonatype.org/content/repositories/snapshots"
 
-    libraryDependencies ++= "com.github.scala-blitz" %% "scala-blitz" % "1.0-M1"
+    libraryDependencies += "com.github.scala-blitz" %% "scala-blitz" % "1.0-M1"
 
 
 
