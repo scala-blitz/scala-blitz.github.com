@@ -15,7 +15,7 @@ in redistributed code must be preserved and, in every licensed file changed, a n
 
 Unless explicitly stated otherwise, any contributions submitted will be under the terms same license without requiring separate agreements regarding these contributions.
 
-See the full license [here](https://github.com/scala-blitz/scala-blitz/blob/master/LICENCE)
+See the full license [here](https://github.com/scala-blitz/scala-blitz/blob/master/LICENCE).
 
           
 
