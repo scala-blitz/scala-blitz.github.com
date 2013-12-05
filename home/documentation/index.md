@@ -30,6 +30,11 @@ This section describes the overall design of parallel collections.
 It introduces zippable and reducables, stealers and mergers, and kernels and schedulers.
 
 
+
+### [Sequential optimizations]({{ homedir }}/home/documentation/optimize.html)
+
+This section describes the optimize block, used to speed up bulk operations on sequential Scala collections.
+
 ### [Parallel collections classes]({{ homedir }}/home/documentation/classes.html)
 
 The choice of a particular parallel collection can have a noticeable impact on performance.
