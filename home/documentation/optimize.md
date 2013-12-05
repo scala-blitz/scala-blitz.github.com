@@ -51,7 +51,7 @@ and the function body will be rewritten to something similar to this:
       x.toPar.filter(x => (x % 3 == 0)|| (x % 5 == 0)).reduce(_ + _)
     }
 
-If you measure the running time you will see a 3x speedup [on benchmarks](TODO).
+If you measure the running time you will see a 3x speedup [on benchmarks](http://goo.gl/TV2CC3).
 
 Currently, the speedup is limited to only 3x due to array allocation inside the `filter`.
 This allocation can be removed entirely by advanced analysis.

@@ -151,8 +151,8 @@ This method is *idempotent* and may be called multiple times,
 but only after the stealer was stolen.
 
 For a more detailed description of the interaction between these methods,
-see the [`Stealer` source code](TODO).
-To see a simple example implementation, consider studying [indexed stealers](TODO)
+see the [`Stealer` source code](https://github.com/scala-blitz/scala-blitz/blob/master/src/main/scala/scala/collection/par/Stealer.scala).
+To see a simple example implementation, consider studying [indexed stealers](https://github.com/scala-blitz/scala-blitz/blob/master/src/main/scala/scala/collection/par/workstealing/IndexedStealer.scala)
 for ranges and arrays.
 
 
