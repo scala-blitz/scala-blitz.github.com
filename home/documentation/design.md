@@ -49,7 +49,7 @@ have their own implicit conversions that add methods to, say, `Par[Array[T]]`:
 Such a parallel collections hierarchy is much more flexible.
 
 
-## Reducables and zippables
+## Reducibles and zippables
 
 There are some important disadvantages too -- the main problem with this design
 is that clients can no longer use parallel collections generically.
@@ -79,15 +79,15 @@ Well, there is no efficient way to parallelize the general sequence abstraction.
 The sequence might actually be implemented as a list, which is not efficiently parallelizable.
 
 To cope with the problem that method signatures cannot be generic like this,
-parallel collections define two special traits called `Reducable[T]` and `Zippable[T]`.
+parallel collections define two special traits called `Reducible[T]` and `Zippable[T]`.
 These traits allow writing generic collection code, since they are equipped with extension methods
 for standard collection operations.
-The `Zippable[T]` trait is a subtype of `Reducable[T]` since it offers more operations and is only
+The `Zippable[T]` trait is a subtype of `Reducible[T]` since it offers more operations and is only
 applicable to specific kinds of collections.
 
-Using `Reducable[T]`, our method `mean` becomes:
+Using `Reducible[T]`, our method `mean` becomes:
 
-    def mean(a: Reducable[Float]): Float = {
+    def mean(a: Reducible[Float]): Float = {
       val sum = a.reduce(_ + _)
       sum / a.length
     }
@@ -99,17 +99,17 @@ We can call `mean` like this:
 
 But aren't the arguments to `mean` now supposed to have type `Par[Array[Float]]` and `Par[mutable.HashSet[Float]]`?
 
-The answer is that they are implicitly converted to instances of `Reducable[Float]`.
+The answer is that they are implicitly converted to instances of `Reducible[Float]`.
 Every collection type `R` with elements `T` that has an `Ops[T]` implicit wrapper defined for `Par[R]`
-may additionally have an instance of the type-class `IsReducable[R, T]`:
+may additionally have an instance of the type-class `IsReducible[R, T]`:
 
-    trait IsReducable[R, T] {
-      def apply(pr: Par[R]): Reducable[T]
+    trait IsReducible[R, T] {
+      def apply(pr: Par[R]): Reducible[T]
     }
 
-This typeclass allows parallel collections of type `Par[R]` to be converted to `Reducable[T]`.
+This typeclass allows parallel collections of type `Par[R]` to be converted to `Reducible[T]`.
 A similar mechanism exists for `Zippable[T]`.
-Parallel collections implemented in this framework can be easily converted to reducables or zippables.
+Parallel collections implemented in this framework can be easily converted to reducibles or zippables.
 
 The rest of this section goes deeper into the architectural details of the framework.
 Unless you're seeking knowledge to extend the framework with new collections or operations,
