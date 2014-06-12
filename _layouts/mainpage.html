@@ -25,6 +25,23 @@ layout: base
 
 <div id="content">
   <div id="main" class="container_16">
+    <div class="grid_16">
+
+      <div class="grid_7 alpha">
+        {% capture main_headline_0 %}{% include main-headline-0.md %}{% endcapture %}
+        {{ main_headline_0 | markdownify }}
+      </div>
+      <div class="grid_1">
+        <br/>
+      </div>
+      <div class="grid_8 omega">
+        {% capture main_example_0 %}
+          {% include main-example-0.md %}
+        {% endcapture %}
+        {{ main_example_0 | markdownify }}
+      </div>
+
+    </div>
 
     <div class="grid_16">
 
