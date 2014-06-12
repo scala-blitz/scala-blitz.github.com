@@ -1,4 +1,7 @@
+#tested with jekyll 2.0.3
 title: "ScalaBlitz"
 title: "The documentation and downloads for the ScalaBlitz framework."
 
-pygments: true
+highlighter: pygments
+markdown: kramdown
+relative_permalinks: true
